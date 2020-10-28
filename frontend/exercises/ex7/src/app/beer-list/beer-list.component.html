@@ -1,0 +1,17 @@
+<header class="fd-page__header fd-has-background-color-background-2">
+	<div class="fd-action-bar">
+		<div class="fd-action-bar__header">
+			<h3 class="fd-action-bar__title">
+				Beer List
+			</h3>
+		</div>
+	</div>
+</header>
+
+<section class="fd-section">
+	<div class="fd-page__content fd-has-background-color-neutral-2">
+		<fd-layout-grid [col]="3">
+			<app-beer-list-item *ngFor="let beer of beers" [beer]="beer"></app-beer-list-item>
+		</fd-layout-grid>
+	</div>
+</section>

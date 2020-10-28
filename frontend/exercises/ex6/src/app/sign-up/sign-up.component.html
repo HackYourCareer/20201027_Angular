@@ -1,0 +1,53 @@
+<fd-dialog>
+	<fd-dialog-header>
+		<h1 fd-dialog-title>Sign up</h1>
+		<button fd-dialog-close-btn class="sap-icon--decline" (click)="dismiss()"></button>
+	</fd-dialog-header>
+
+	<fd-dialog-body class="sign-up-form-panel">
+		<form [formGroup]="signupForm">
+			<div fd-form-item>
+				<label fd-form-label for="birthDate">
+					Birth date:
+				</label>
+				<fd-date-picker id="birthDate" formControlName="birthDate"></fd-date-picker>
+			</div>
+			<br />
+			<div fd-form-item>
+				<label fd-form-label for="login">
+					Login:
+				</label>
+				<input fd-form-control type="text" id="login" placeholder="Login" formControlName="userName">
+			</div>
+			<br />
+			<div formGroupName="passwords">
+				<div fd-form-item>
+					<label fd-form-label for="password">
+						Password:
+					</label>
+					<input fd-form-control type="password" id="password" placeholder="Password"
+						formControlName="password">
+				</div>
+				<div fd-form-item>
+					<label fd-form-label for="repeatPassword">
+						Repeat password:
+					</label>
+					<input fd-form-control type="password" id="repeatPassword" placeholder="Repeat password"
+						formControlName="repeatedPassword">
+				</div>
+			</div>
+		</form>
+	</fd-dialog-body>
+
+	<fd-dialog-footer>
+		<fd-dialog-footer-button>
+			<button fd-button class="action-button" fdType="emphasized" fd-dialog-decisive-button [compact]="true"
+				(click)="signup()" [disabled]="!signupForm.valid">Sign up</button>
+		</fd-dialog-footer-button>
+
+		<fd-dialog-footer-button>
+			<button fd-button class="action-button" fdType="transparent" fd-dialog-decisive-button [compact]="true"
+				(click)="dismiss()">Cancel</button>
+		</fd-dialog-footer-button>
+	</fd-dialog-footer>
+</fd-dialog>

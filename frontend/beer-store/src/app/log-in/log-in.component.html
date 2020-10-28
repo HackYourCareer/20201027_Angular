@@ -1,0 +1,43 @@
+<section class="fd-section beer-welcome-page">
+	<fd-alert [type]="'warning'" [dismissible]="false">
+		Please login to continue!
+		<br>
+		You can only buy beer if you are 18 or older!
+	</fd-alert>
+	<br>
+	<br>
+	<form #loginForm="ngForm" (ngSubmit)="login()">
+		<fd-panel class="beer-login-form-panel">
+			<fd-panel-header>
+				<fd-panel-head>
+					<h2 fd-panel-title>Log in</h2>
+					<fd-panel-description>You can only buy beer if you are 18 or older!</fd-panel-description>
+				</fd-panel-head>
+			</fd-panel-header>
+			<fd-panel-body>
+				<div fd-form-item>
+					<label fd-form-label for="login">
+						Login:
+					</label>
+					<input fd-form-control type="text" id="login" placeholder="Login" [(ngModel)]="model.userName"
+						required name="userName">
+				</div>
+				<div fd-form-item>
+					<label fd-form-label for="password">
+						Password:
+					</label>
+					<input fd-form-control type="password" id="password" placeholder="Password"
+						[(ngModel)]="model.password" required name="password">
+				</div>
+				<fd-form-message *ngIf="showErrorBox" [type]="'error'">
+					Incorrect credentials
+				</fd-form-message>
+			</fd-panel-body>
+			<fd-panel-footer>
+				<button class="action-button" fd-button [disabled]="!loginForm.form.valid" type="submit">
+					Login
+				</button>
+			</fd-panel-footer>
+		</fd-panel>
+	</form>
+</section>

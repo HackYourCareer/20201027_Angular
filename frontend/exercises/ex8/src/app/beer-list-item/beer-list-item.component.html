@@ -1,0 +1,21 @@
+<fd-tile *ngIf="beer" class="beer-list-item" [isButton]="true" [routerLink]="['/beer', beer.name]">
+
+	<div fd-tile-media>
+		<fd-image [size]="'l'" [photo]="mediaUrl()"></fd-image>
+	</div>
+
+	<div fd-tile-content>
+		<h2 fd-tile-title>
+			<b>{{beer.name | uppercase }}</b>
+		</h2>
+		<p fd-tile-text>
+			<fd-icon [size]="'l'" [glyph]="'lab'"></fd-icon> {{beer.ibu}}
+		</p>
+		<p fd-tile-text>
+			<fd-icon [size]="'l'" [glyph]="'pipeline-analysis'"></fd-icon> {{beer.alc}}
+		</p>
+		<p fd-tile-text>
+			<fd-icon [size]="'l'" [glyph]="'blank-tag-2'"></fd-icon> {{beer.style}}
+		</p>
+	</div>
+</fd-tile>

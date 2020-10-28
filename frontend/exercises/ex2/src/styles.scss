@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'SAP-icons';
+    src: url('node_modules/@sap-theming/theming-base-content/content/Base/baseLib/sap_fiori_3/fonts/SAP-icons.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	margin: 0;
+}
+
+.fd-shell__app {
+	height: 100%;
+}
+
+.fd-page {
+	--fd-page-background-color: #edeff0;
+}
+
+.beer-welcome-page {
+	background: url("/assets/placeholder.jpg");
+	background-size: cover;
+	height: 90vh;
+
+	.beer-login-form-panel {
+		width: 400px;
+		margin: 0 auto;
+		display: block;
+	}
+}

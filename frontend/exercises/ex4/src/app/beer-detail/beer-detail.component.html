@@ -1,0 +1,49 @@
+<header class="fd-page__header fd-has-background-color-background-2">
+	<div class="fd-action-bar">
+		<div class="fd-action-bar__header">
+			<h3 *ngIf="beer" class="fd-action-bar__title">
+				{{beer.name}}
+			</h3>
+
+			<fd-breadcrumb>
+				<fd-breadcrumb-item>
+					<a fd-breadcrumb-link [routerLink]="'/beers'">/ Beer List</a>
+				</fd-breadcrumb-item>
+			</fd-breadcrumb>
+		</div>
+	</div>
+</header>
+
+<section class="fd-section">
+	<div *ngIf="beer" class="fd-page__content fd-has-background-color-neutral-2">
+		<fd-layout-grid [col]="3">
+			<fd-panel fd-layout-grid-span [columnSpan]="1">
+				<fd-panel-body>
+					<img src="{{mediaUrl()}}" alt="{{beer.name}}" style="margin: 0 auto; display: block;" />
+				</fd-panel-body>
+			</fd-panel>
+
+			<fd-panel fd-layout-grid-span [columnSpan]="2">
+				<fd-panel-body>
+					<fd-tile>
+						<div fd-tile-content>
+							<p fd-tile-text>{{beer.description}}</p>
+							<p fd-tile-text>
+								<fd-icon [size]="'l'" [glyph]="'lab'"></fd-icon> IBU: {{beer.ibu}}
+							</p>
+							<p fd-tile-text>
+								<fd-icon [size]="'l'" [glyph]="'pipeline-analysis'"></fd-icon> Alcohol: {{beer.alc}}
+							</p>
+							<p fd-tile-text>
+								<fd-icon [size]="'l'" [glyph]="'blank-tag-2'"></fd-icon> Style: {{beer.style}}
+							</p>
+							<p fd-tile-text>
+								<fd-icon [size]="'l'" [glyph]="'customize'"></fd-icon> Hops: {{beer.hops}}
+							</p>
+						</div>
+					</fd-tile>
+				</fd-panel-body>
+			</fd-panel>
+		</fd-layout-grid>
+	</div>
+</section>
